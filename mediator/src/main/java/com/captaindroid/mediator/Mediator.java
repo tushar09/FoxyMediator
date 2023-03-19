@@ -17,17 +17,24 @@ public class Mediator {
     private static Mediator m;
 
     private InterstitialAd interstitialAd;
+    private boolean isTesting = false;
+    private Context context;
 
     public static Mediator with(Context context){
         if(m == null){
             m = new Mediator();
         }
+        m.context = context;
         AudienceNetworkAds.initialize(context);
         return m;
     }
 
-    public void loadInterstitialAd(Context context, String placementId, @NotNull AdListener listener){
-        if(BuildConfig.DEBUG){
+    public void setTesting(boolean isTesting){
+        this.isTesting = isTesting;
+    }
+
+    public void loadInterstitialAd(String placementId, @NotNull AdListener listener){
+        if(isTesting){
             AdSettings.setTestMode(true);
             placementId = "IMG_16_9_LINK#" + placementId;
         }

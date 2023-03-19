@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Mediator.with(this).loadInterstitialAd(this, "5476461102469724_5478329148949586", new AdListener() {
+        Mediator.with(this).loadInterstitialAd("5476461102469724_5478329148949586", new AdListener() {
             @Override
             public void onAdShown(Ad ad) {
                 Log.e("show", "from here");
