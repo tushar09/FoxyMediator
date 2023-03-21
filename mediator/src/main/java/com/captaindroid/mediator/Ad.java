@@ -31,4 +31,8 @@ public class Ad {
     public AdType getAdType() {
         return adType;
     }
+
+    public String getAdError() {
+        return adError;
+    }
 }

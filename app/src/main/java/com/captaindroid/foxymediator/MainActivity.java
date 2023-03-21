@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdError(Ad ad) {
-
             }
 
             @Override
