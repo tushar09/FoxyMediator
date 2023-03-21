@@ -29,8 +29,9 @@ public class Mediator {
         return m;
     }
 
-    public void setTesting(boolean isTesting){
+    public Mediator setTesting(boolean isTesting){
         this.isTesting = isTesting;
+        return m;
     }
 
     public void loadInterstitialAd(String placementId, @NotNull AdListener listener){
@@ -52,7 +53,7 @@ public class Mediator {
 
             @Override
             public void onError(Ad ad, AdError adError) {
-                Log.e("err", adError.getErrorMessage());
+                listener.onAdError(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META, adError.getErrorMessage()));
             }
 
             @Override
@@ -67,7 +68,7 @@ public class Mediator {
 
             @Override
             public void onLoggingImpression(Ad ad) {
-
+                listener.onAdShown(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
             }
         };
         interstitialAd.loadAd(interstitialAd.buildLoadAdConfig().withAdListener(interstitialAdListener).build());

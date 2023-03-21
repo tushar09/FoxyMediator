@@ -7,9 +7,17 @@ public class Ad {
     private AdType adType;
     private InterstitialAd interstitialAd;
 
+    private String adError;
+
     public Ad(InterstitialAd interstitialAd, AdType adType) {
         this.adType = adType;
         this.interstitialAd = interstitialAd;
+    }
+
+    public Ad(InterstitialAd interstitialAd, AdType adType, String adError) {
+        this.adType = adType;
+        this.interstitialAd = interstitialAd;
+        this.adError = adError;
     }
 
     public void show(){
@@ -18,6 +26,9 @@ public class Ad {
         }else if(adType == AdType.ADMOB){
 
         }
+    }
 
+    public AdType getAdType() {
+        return adType;
     }
 }
