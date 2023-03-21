@@ -48,7 +48,7 @@ public class Mediator {
 
             @Override
             public void onInterstitialDismissed(Ad ad) {
-
+                listener.onAdError(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
             }
 
             @Override
