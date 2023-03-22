@@ -1,9 +1,8 @@
 package com.captaindroid.mediator;
 
 import android.content.Context;
-import android.util.Log;
 
-import com.captaindroid.mediator.listener.AdListener;
+import com.captaindroid.mediator.listener.AdEvents;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdSettings;
@@ -34,7 +33,7 @@ public class Mediator {
         return m;
     }
 
-    public void loadInterstitialAd(String placementId, @NotNull AdListener listener){
+    public void loadInterstitialAd(String placementId, @NotNull AdEvents listener){
         if(isTesting){
             AdSettings.setTestMode(true);
             placementId = "IMG_16_9_LINK#" + placementId;

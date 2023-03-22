@@ -1,6 +1,5 @@
 package com.captaindroid.mediator;
 
-import com.captaindroid.mediator.listener.AdListener;
 import com.facebook.ads.InterstitialAd;
 
 public class Ad {

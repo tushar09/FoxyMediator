@@ -3,12 +3,11 @@ package com.captaindroid.foxymediator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.captaindroid.mediator.Ad;
 import com.captaindroid.mediator.Mediator;
 import com.captaindroid.mediator.R;
-import com.captaindroid.mediator.listener.AdListener;
+import com.captaindroid.mediator.listener.AdEvents;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Mediator.with(this).setTesting(true).loadInterstitialAd("5476461102469724_5478329148949586", new AdListener() {
+        Mediator.with(this).setTesting(true).loadInterstitialAd("5476461102469724_5478329148949586", new AdEvents() {
             @Override
             public void onAdShown(Ad ad) {
 
