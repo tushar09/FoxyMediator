@@ -43,12 +43,12 @@ public class Mediator {
         InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
             @Override
             public void onInterstitialDisplayed(Ad ad) {
-
+                listener.onAdShown(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
             }
 
             @Override
             public void onInterstitialDismissed(Ad ad) {
-                listener.onAdError(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
+                listener.onAdClosed(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
             }
 
             @Override
@@ -63,12 +63,12 @@ public class Mediator {
 
             @Override
             public void onAdClicked(Ad ad) {
-
+                listener.onAdClicked(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
             }
 
             @Override
             public void onLoggingImpression(Ad ad) {
-                listener.onAdShown(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
+                listener.onAdImpression(new com.captaindroid.mediator.Ad(interstitialAd, AdType.META));
             }
         };
         interstitialAd.loadAd(interstitialAd.buildLoadAdConfig().withAdListener(interstitialAdListener).build());

@@ -8,4 +8,6 @@ public interface AdListener {
     void onAdClosed(Ad ad);
     void onAdLoadFailed(Ad ad);
     void onAdLoaded(Ad ad);
+    void onAdClicked(Ad ad);
+    void onAdImpression(Ad ad);
 }
