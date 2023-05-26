@@ -1,6 +1,6 @@
 package com.captaindroid.mediator.listener;
 
-import com.captaindroid.mediator.Ad;
+import com.captaindroid.mediator.dto.Ad;
 
 public abstract class AdEvents {
     public void onAdShown(Ad ad){};
